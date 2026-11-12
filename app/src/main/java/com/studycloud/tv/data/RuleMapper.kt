@@ -36,6 +36,9 @@ object RuleMapper {
                     ?: defaults.difficultyRewards,
                 blockSettingsDuringControl = json.optBoolean("blockSettingsDuringControl", true),
                 autoNextSeconds = json.optInt("autoNextSeconds", defaults.autoNextSeconds),
+                showAnswerOnWrong = json.optBoolean("showAnswerOnWrong", defaults.showAnswerOnWrong),
+                praisePhrases = parsePhrases(json.optJSONArray("praisePhrases")),
+                encouragePhrases = parsePhrases(json.optJSONArray("encouragePhrases")),
             )
         }.getOrNull()
     }
@@ -58,6 +61,13 @@ object RuleMapper {
             val row = array.optJSONArray(day) ?: return null
             (0 until 48).map { slot -> row.optInt(slot, 0) }
         }
+    }
+
+    private fun parsePhrases(array: JSONArray?): List<String> {
+        if (array == null) return emptyList()
+
+        return (0 until array.length())
+            .mapNotNull { array.optString(it, "").trim().ifEmpty { null } }
     }
 
     private fun parseRewards(array: JSONArray?): List<Double>? {

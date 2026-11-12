@@ -32,7 +32,7 @@
 
 | 模块 | 内容 | 状态 |
 |---|---|---|
-| `core-gate` | **时长账本与弹题状态机**、同步计划器。纯 Kotlin / JVM，不依赖 Android 框架 | 已实现，19 项测试通过 |
+| `core-gate` | **时长账本与弹题状态机**、同步计划器。纯 Kotlin / JVM，不依赖 Android 框架 | 已实现，39 项测试通过 |
 | `app` | 登录页、答题页、管控前台服务、凭据存储、API 客户端、本地库、同步 Worker | 已接入构建，`assembleDebug` 可出 APK |
 
 ## 为什么核心逻辑是纯 JVM 模块
@@ -44,8 +44,7 @@
 ## 构建与测试
 
 ```bash
-cd apps/android
-./gradlew :core-gate:test      # 账本与状态机，19 项，纯 JVM
+./gradlew :core-gate:test      # 账本与状态机，39 项，纯 JVM，不需要模拟器
 ./gradlew :app:assembleDebug   # 产出 app/build/outputs/apk/debug/app-debug.apk
 ```
 

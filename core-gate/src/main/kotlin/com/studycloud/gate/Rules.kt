@@ -31,6 +31,12 @@ data class RuleSnapshot(
     val difficultyRewards: List<Double> = listOf(1.0, 2.0, 3.0, 4.0, 5.0),
     val blockSettingsDuringControl: Boolean = true,
     val autoNextSeconds: Int = 0,
+    /** 答错后是否把正确答案一并显示出来。 */
+    val showAnswerOnWrong: Boolean = true,
+    /** 答对时的鼓励语，随机取一条；为空时由界面用内置文案兜底。 */
+    val praisePhrases: List<String> = emptyList(),
+    /** 答错时的鼓励语，随机取一条；为空时由界面用内置文案兜底。 */
+    val encouragePhrases: List<String> = emptyList(),
 ) {
     val dailyCapSeconds: Int get() = dailyMinutes * 60
 
@@ -39,6 +45,19 @@ data class RuleSnapshot(
     fun rewardSecondsFor(difficulty: Int): Int {
         val index = (difficulty - 1).coerceIn(0, difficultyRewards.lastIndex)
         return Math.round(difficultyRewards[index] * 60).toInt()
+    }
+
+    /**
+     * 取一条反馈语。[seed] 由调用方给（通常是题目 id 的哈希），
+     * 同一题重复渲染不会换词，但不同题之间会轮换。
+     */
+    fun feedbackPhrase(correct: Boolean, seed: Int): String? {
+        val phrases = if (correct) praisePhrases else encouragePhrases
+        val usable = phrases.filter { it.isNotBlank() }
+
+        if (usable.isEmpty()) return null
+
+        return usable[Math.floorMod(seed, usable.size)]
     }
 
     /** 该时刻是否落在「需要答题」的管控时段内。 */
