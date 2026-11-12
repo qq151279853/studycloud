@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 电视过扫描安全边距：1080p 下约为宽度的 5% -->
+    <dimen name="tv_safe_margin">48dp</dimen>
+    <dimen name="tv_option_height">64dp</dimen>
+    <dimen name="tv_option_gap">12dp</dimen>
+</resources>

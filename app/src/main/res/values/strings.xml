@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">StudyCloud</string>
+    <string name="login_title">登录 StudyCloud</string>
+    <string name="login_subtitle">登录后，这台设备会接入你的家庭</string>
+    <string name="login_username">用户名</string>
+    <string name="login_password">密码</string>
+    <string name="login_show_password">显示密码</string>
+    <string name="login_remember">记住登录</string>
+    <string name="login_device_name">设备名称</string>
+    <string name="login_submit">登录</string>
+    <string name="login_in_progress">正在登录…</string>
+    <string name="login_restoring">正在恢复登录状态…</string>
+    <string name="quiz_title">答题解锁</string>
+    <string name="quiz_text_hint">在这里输入答案</string>
+    <string name="quiz_submit">提交</string>
+    <string name="quiz_continue">继续</string>
+    <string name="quiz_finish">完成</string>
+    <string name="quiz_correct">答对了</string>
+    <string name="quiz_wrong">答错了</string>
+    <string name="quiz_pending_review">已提交，等待家长批改</string>
+    <string name="quiz_progress">第 %1$d / %2$d 题</string>
+    <string name="quiz_extra">加练题 · 还剩 %1$d 道</string>
+    <string name="quiz_balance">剩余 %1$d 分钟</string>
+    <string name="quiz_no_questions">还没有题目，请家长在后台分配题库</string>
+    <string name="gate_notification_title">学习管控运行中</string>
+    <string name="gate_notification_text">看够设定时长会弹出答题</string>
+    <string name="gate_channel_name">管控服务</string>
+    <string name="gate_locked_title">现在不能使用</string>
+    <string name="gate_prompt_title">该答题啦</string>
+    <string name="gate_prompt_action">开始答题</string>
+    <string name="quiz_correct_option">正确</string>
+    <string name="quiz_wrong_option">错误</string>
+</resources>

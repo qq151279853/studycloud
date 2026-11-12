@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Leanback 启动器要求的横幅，标准尺寸 320x180 -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="320dp"
+    android:height="180dp"
+    android:viewportWidth="320"
+    android:viewportHeight="180">
+    <path
+        android:fillColor="#1F5FD6"
+        android:pathData="M0,0h320v180h-320z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M40,66h110v12h-110z M40,88h110v12h-110z M40,110h70v12h-70z" />
+    <path
+        android:fillColor="#7AA6F5"
+        android:pathData="M200,60h80v60h-80z M232,120h16v12h-16z M212,132h56v8h-56z" />
+</vector>
